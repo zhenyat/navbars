@@ -7,7 +7,10 @@
       <%= link_to image_tag('logos/admin_tools.png', class: 'h-8 rounded-xl'), '#' %>
     </div>
     <div class='p-2'>
-      Data
+      <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" id="navbarDropdown" role="button">
+        <span aria-hidden="true" class="fas fa-database fa-2x" style="color:navy"></span>
+        <%= t(:data) %>
+      </a>
     </div>
     <div class='p-2'>
       Dropdown
