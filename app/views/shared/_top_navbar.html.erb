@@ -15,7 +15,12 @@
     <div class='p-2'>
 
     <div data-controller="dropdown" class="relative">
-      <button type="button" data-action="dropdown#toggle click@window->dropdown#hide">Dropdown</button>
+      <button type="button" data-action="dropdown#toggle click@window->dropdown#hide" class='flex items-center'>
+        Dropdown
+        <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+        </svg>
+      </button>
 
       <div
         data-dropdown-target="menu"
@@ -25,9 +30,9 @@
         data-transition-leave-from="opacity-100 scale-100"
         data-transition-leave-to="opacity-0 scale-95"
       >
-        <a href="#" data-action="dropdown#toggle">Account settings</a>
-        <a href="#" data-action="dropdown#toggle">Support</a>
-        <a href="#" data-action="dropdown#toggle">License</a>
+        <%= link_to 'First', dummy_first_path, :'data-action' => 'dropdown#toggle', class: 'flex' %>
+        <%= link_to 'Second', dummy_second_path, :'data-action' => 'dropdown#toggle', class: 'flex' %>
+        <%= link_to 'Third', dummy_third_path, :'data-action' => 'dropdown#toggle', class: 'flex' %>
       </div>
     </div>
     </div>

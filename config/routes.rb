@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'dummy/first'
+  get 'dummy/second'
+  get 'dummy/third'
   root 'home#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
