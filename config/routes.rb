@@ -2,9 +2,12 @@ Rails.application.routes.draw do
   # scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
   scope "/:locale", locale: /#{I18n.available_locales.join("|")}/ do
     root 'home#index'
-    get 'dummy/first'
-    get 'dummy/second'
-    get 'dummy/third'
+    get "/first", to: "dummy#first", as: :first  # ==> http://localhost:3000/en/first
+    get "/second", to: "dummy#second", as: :second
+    get "/third", to: "dummy#third", as: :third
+    # get 'dummy/first', as: :first      # ==> http://localhost:3000/en/dummy/first
+    # get 'dummy/second', as: :second
+    # get 'dummy/third', as: :third
   end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
