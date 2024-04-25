@@ -38,12 +38,12 @@
     </div>
   </div>
 
-  <div class='flex items-center'>
+  <div class='flex'>
     <div class='p-2'>
       <!--  https://tailwindcomponents.com/component/dropdown-8  -->
       <div class="relative w-full items-center mx-auto max-w-screen-sm">
         <div id="bouton" class="relative group/bouton w-full">
-          <button class="bg-stone-100 py-1 pr-10 min-w-40 relative w-full">
+          <button class="bg-stone-100 py- pr-10 min-w-40 relative w-full">
             Drop-down
             <span class="absolute flex items-center justify-center bg-stone-200 w-8 top-0 h-full right-0">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 group-hover/bouton:rotate-90">
@@ -110,13 +110,11 @@
           data-transition-leave-from="opacity-100 scale-100"
           data-transition-leave-to="opacity-0 scale-95"
         >
-          <ul>
+          <ul class='bg-white px-4'>
             <% I18n. available_locales.each do |locale| %>
               <li>
-                <% if I18n.locale == locale %>
-                  <%= t(locale, scope: 'locales') %>
-                <% else %>
-                  <%= link_to t(locale, scope: 'locales'), url_for(locale: locale) %>
+                <% if I18n.locale != locale %>
+                  <%= link_to t(locale, scope: 'locales'), url_for(locale: locale), :class => 'hover:bg-sky-200' %>
                 <% end %>
               </li>
             <% end %> 
